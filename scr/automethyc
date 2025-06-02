@@ -39,7 +39,7 @@ Optional arguments
 "-o"|"--output"      ) output="$1"; arr+=("-o" "$1"); shift;;
 "-r"|"--reference"      ) ref="$1"; arr+=("-r" "$1"); shift;;
 "-b"|"--bed"      ) filtro="$1"; arr+=("-f" "$1"); shift;;
-"-t"|"--threads"      ) thr="$1"; arr+=("-t" "$1") shift;;
+"-t"|"--threads"      ) thr="$1"; arr+=("-t" "$1"); shift;;
 "-n"|"--normal"      ) norm="$1"; arr+=("-n" "$1"); shift;;
 "-g"|"--genome"       ) genome="$1"; arr+=("-g" "$1"); shift;;
 "-q"|"--quality"       ) quality="$1"; arr+=("-q" "$1"); shift;;
@@ -64,7 +64,7 @@ echo 'genome		|' $genome
 echo 'depth		|' $depth
 echo 'quality		|' $quality
 echo 'read		|' $read_fastq
-echo 'combinations		|' $combination
+echo 'combinations		|' $combinations
 echo '#===================================================================#'
 echo -e " automethyc ${arr[@]} \n input,$input \n output,$output \n reference,$ref \n bed,$filtro \n threads,$thr \n normal,$norm \n genome,$genome \n depth,$depth \n quaility,$quality \n combinations,$combinations" > $output/command_options.txt
 
