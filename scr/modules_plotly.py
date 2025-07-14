@@ -950,20 +950,22 @@ def make_plotly_graph(G, node_color=[], name=''):
         node_trace['text'] += (node,)
 
     fig = go.Figure(data=[edge_trace, node_trace],
-                    layout=go.Layout(
-                        title='Red de Co-Metilación',
-                        titlefont_size=16,
-                        showlegend=False,
-                        hovermode='closest',
-                        margin=dict(b=20, l=5, r=5, t=40),
-                        annotations=[dict(
-                            text="",
-                            showarrow=False,
-                            xref="paper", yref="paper"
-                        )],
-                        xaxis=dict(showgrid=False, zeroline=False),
-                        yaxis=dict(showgrid=False, zeroline=False)
-                    ))
+                layout=go.Layout(
+                    title=dict(
+                        text='Red de Co-Metilación',
+                        font=dict(size=16)
+                    ),
+                    showlegend=False,
+                    hovermode='closest',
+                    margin=dict(b=20, l=5, r=5, t=40),
+                    annotations=[dict(
+                        text="",
+                        showarrow=False,
+                        xref="paper", yref="paper"
+                    )],
+                    xaxis=dict(showgrid=False, zeroline=False),
+                    yaxis=dict(showgrid=False, zeroline=False)
+                ))
 
     return fig
 
